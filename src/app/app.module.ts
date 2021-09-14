@@ -11,6 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { TopHeadlinesComponent } from './components/top-headlines/top-headlines.component';
 import { EverythingComponent } from './components/everything/everything.component';
 import { LikesComponent } from './components/likes/likes.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { LikesComponent } from './components/likes/likes.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
