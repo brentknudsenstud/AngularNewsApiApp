@@ -1,0 +1,74 @@
+@import '../../styles/base';
+
+.sidenav-body {
+    color: $secondary;
+    height: 100vh;
+    position: relative;
+
+    .sidenavTitle {
+        font-size: 26px;
+        margin: 0px;
+        padding: 20px 10px 20px;
+        border-bottom: 1px solid #bcbcc4;
+        border-radius: 0px 20px 0px 0px;
+    }
+
+
+    .links {
+        color: $secondary;
+        font-size: 20px;
+        text-decoration: none;
+    }
+    .subLinks { 
+        display: block; 
+        font-size: 16px;
+        padding: 8px 10px 0px;
+    }
+    .dropdown {
+        overflow: hidden;
+        height: 22px;
+        transition: height .25s;
+    }
+    .heightForSublinks { height: 218px; }
+    .dropdownBtn { user-select: none; }
+    .dropdownBtn:hover { cursor: pointer; }
+
+
+    .navItem {
+        display: block;
+        padding: 10px 20px 10px;
+        margin: 0px;
+        border-bottom: 1px solid #bcbcc460;
+    }
+
+    .topHeadlines {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2px;
+    }
+
+    .signOut {
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+
+        color: $secondary;
+    }
+
+    .centerNotLoggedMessage {
+        text-align: center;
+        margin-top: 32vh;
+
+        .notLoggedIcon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        .notLoggedIn {
+            padding: 15px;
+            font-size: 20px;
+        }
+    }
+
+
+
+}

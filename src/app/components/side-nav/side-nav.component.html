@@ -1,0 +1,26 @@
+<div *ngIf="isLoggedIn == true" class="sidenav-body">
+    <h1 class="sidenavTitle">&#9929; News Ok</h1>
+
+    <div [class]="dropdownStyle">
+        <div class="topHeadlines">
+            <a class="links" routerLink="/">Top Headlines</a>
+            <span class="dropdownBtn" (click)="toggleDropdown()">&#9947;</span>
+        </div>
+        <div>
+            <a *ngFor="let cat of topHeadlineCategories" class="links subLinks" routerLink="/">{{cat}}</a>
+        </div>
+    </div>
+    <a class="links navItem" routerLink="/">Search</a>
+    <a class="links navItem" routerLink="/">Likes</a>
+
+    <a class="signOut">Sign Out</a>
+</div>
+
+
+<div *ngIf="isLoggedIn == false" class="sidenav-body">
+    <h1 class="sidenavTitle">&#9929; News Ok</h1>
+    <div class="centerNotLoggedMessage">
+        <div class="notLoggedIcon">&#9972;</div>
+        <span class="notLoggedIn">Set Sail With Us</span>
+    </div>
+</div>
