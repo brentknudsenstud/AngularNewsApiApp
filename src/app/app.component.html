@@ -1,12 +1,12 @@
+<div class="background-image"></div>
 <mat-drawer-container class="app-container-with-sidenav" autosize (window:resize)="shouldOpen()">
-  <div class="background-image"></div>
-    <mat-drawer #drawer class="sidenav" mode="side" [opened]="sideNavShouldOpen" >
-        <app-side-nav></app-side-nav>
-    </mat-drawer>
+  <mat-drawer #drawer class="sidenav" mode="side" [opened]="sideNavShouldOpen" >
+    <app-side-nav></app-side-nav>
+  </mat-drawer>
 
-    <div id="main-header">
-      <button class="toggle-sidenav" type="button" (click)="drawer.toggle()">&#x2630;</button>
-    </div>
+  <div id="main-header">
+    <button class="toggle-sidenav" type="button" (click)="drawer.toggle()">&#x2630;</button>
+  </div>
 
-    <router-outlet></router-outlet>
-  </mat-drawer-container>
+  <router-outlet></router-outlet>
+</mat-drawer-container>
