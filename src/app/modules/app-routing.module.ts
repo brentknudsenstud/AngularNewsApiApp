@@ -8,7 +8,7 @@ import { LikesComponent } from 'src/app/components/likes/likes.component';
 const routes: Routes = [
   {path: "login", component: LoginComponent },
   {path: "top-headlines/:category", component: TopHeadlinesComponent},
-  {path: "everything/:query", component: EverythingComponent},
+  {path: "everything/:query/:category", component: EverythingComponent},
   {path: "likes", component: LikesComponent},
   {path: "", redirectTo: "/login", pathMatch: "full"},
 ];

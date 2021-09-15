@@ -19,12 +19,12 @@ export class TopHeadlinesComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.url.subscribe( url => {
-      const page = url[0].path
-      const category = this.route.snapshot.paramMap.get('category');
-      const link = this.api.topHeadlinesEndpoint(page,category);
+      const category = url[1].path;
+      const link = this.api.topHeadlinesEndpoint(category);
       // this.http.get(link).subscribe(data => {
       //   this.apiPayload = data;
       // });
+      this.apiPayload = link;
     });
   }
 

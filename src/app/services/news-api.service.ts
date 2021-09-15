@@ -6,33 +6,31 @@ import { HttpClient } from '@angular/common/http'
 })
 export class NewsApiService {
   apiKey: string = "75e20b21ea8f499190960a2dfbc5f410";
+  categories = ['business','entertainment','general','health','science','sports','technology'];
 
   constructor(
     private http: HttpClient,
   ) { }
 
-  topHeadlinesEndpoint(type: string, category: any) {
-    let link = "https://newsapi.org/v2/top-headlines?"
-
-    switch (type) {
-      case "top-headlines":
-        link = link +`category=${category}&apiKey=${this.apiKey}`;
-        return link;
-        break;
-      case "everything":
-        link = link + `category=general&q=${category}&apiKey=${this.apiKey}`;
-        return link;
-        break;
-    }
-    return "";
-
+  topHeadlinesEndpoint(category: any) {
+    let link = `https://newsapi.org/v2/top-headlines?category=${category}&apiKey=${this.apiKey}`;
+    return link;
   }
 
-  everythingEndpoint(query: string) {
-    let link = `https://newsapi.org/v2/everything?q=${query}&apiKey=${this.apiKey}`;
-    // this.http.get(link).subscribe(data => {
-    //   this.apiPayload = data;
-    // });
+  everythingEndpoint(query: string, category: any) {
+    if (category === "general") {
+      let link = `https://newsapi.org/v2/everything?q=${query}&apiKey=${this.apiKey}`;
+      return link;
+    }
+    else if (this.categories.includes(category)) {
+      let link = `https://newsapi.org/v2/top-headlines?category=${category}&q=${query}&apiKey=${this.apiKey}`;
+      return link;
+    }
+    else {
+      let link = `https://newsapi.org/v2/everything?q=${query}&apiKey=${this.apiKey}`;
+      return link;
+    }
+
   }
 
 }
