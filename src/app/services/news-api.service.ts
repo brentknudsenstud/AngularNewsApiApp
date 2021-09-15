@@ -6,26 +6,33 @@ import { HttpClient } from '@angular/common/http'
 })
 export class NewsApiService {
   apiKey: string = "75e20b21ea8f499190960a2dfbc5f410";
-  apiPayload: any = "loading";
 
   constructor(
     private http: HttpClient,
   ) { }
 
-  topHeadlinesEndpoint(category: string) {
-    this.apiPayload = "loading";
-    let link = `'https://newsapi.org/v2/top-headlines?category=${category}&apiKey=${this.apiKey}`;
-    this.http.get(link).subscribe(data => {
-      this.apiPayload = data;
-    });
+  topHeadlinesEndpoint(type: string, category: any) {
+    let link = "https://newsapi.org/v2/top-headlines?"
+
+    switch (type) {
+      case "top-headlines":
+        link = link +`category=${category}&apiKey=${this.apiKey}`;
+        return link;
+        break;
+      case "everything":
+        link = link + `category=general&q=${category}&apiKey=${this.apiKey}`;
+        return link;
+        break;
+    }
+    return "";
+
   }
 
   everythingEndpoint(query: string) {
-    this.apiPayload = "loading";
     let link = `https://newsapi.org/v2/everything?q=${query}&apiKey=${this.apiKey}`;
-    this.http.get(link).subscribe(data => {
-      this.apiPayload = data;
-    });
+    // this.http.get(link).subscribe(data => {
+    //   this.apiPayload = data;
+    // });
   }
-  
+
 }

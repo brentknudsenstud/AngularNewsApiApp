@@ -12,6 +12,7 @@ import { TopHeadlinesComponent } from './components/top-headlines/top-headlines.
 import { EverythingComponent } from './components/everything/everything.component';
 import { LikesComponent } from './components/likes/likes.component';
 import { HttpClientModule } from '@angular/common/http'
+import { NewsApiService } from './services/news-api.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { HttpClientModule } from '@angular/common/http'
     MaterialModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [NewsApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
