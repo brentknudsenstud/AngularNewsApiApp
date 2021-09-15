@@ -3,15 +3,15 @@
 
     <div [class]="dropdownStyle">
         <div class="topHeadlines">
-            <a class="links" routerLink="/">Top Headlines</a>
+            <a class="links" routerLink="/top-headlines/general" (click)="collapseSublinks()">Top Headlines</a>
             <span class="dropdownBtn" (click)="toggleDropdown()">&#9947;</span>
         </div>
         <div>
-            <a *ngFor="let cat of topHeadlineCategories" class="links subLinks" routerLink="/">{{cat}}</a>
+            <a *ngFor="let cat of topHeadlineCategories" class="links subLinks" routerLink="/top-headlines/{{cat}}" (click)="collapseSublinks()">{{cat}}</a>
         </div>
     </div>
-    <a class="links navItem" routerLink="/">Search</a>
-    <a class="links navItem" routerLink="/">Likes</a>
+    <a class="links navItem" routerLink="/everything/general" (click)="collapseSublinks()">Search</a>
+    <a class="links navItem" routerLink="/likes"  (click)="collapseSublinks()">Likes</a>
 
     <a class="signOut">Sign Out</a>
 </div>
