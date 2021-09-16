@@ -1,23 +1,24 @@
-<div *ngIf="isLoggedIn == true" class="sidenav-body">
-    <h1 class="sidenavTitle">&#9929; News Ok</h1>
+<div *ngIf="isLoggedIn === true" class="sidenav-body">
+    <h1 class="sidenavTitle">The News</h1>
 
     <div [class]="dropdownStyle">
         <div class="topHeadlines">
-            <a class="links" routerLink="/top-headlines/general" (click)="collapseSublinks()">Top Headlines</a>
-            <span class="dropdownBtn" (click)="toggleDropdown()">&#9947;</span>
+            <a class="links" routerLink="/top-headlines/general" (click)="collapseSublinks()"><i class="nav-icon fas fa-globe-americas"></i> Top Headlines</a>
+            <span class="dropdownBtn" (click)="toggleDropdown()"><i class="nav-icon fas fa-angle-down"></i></span>
         </div>
         <div>
             <a *ngFor="let cat of topHeadlineCategories" class="links subLinks" routerLink="/top-headlines/{{cat}}" (click)="collapseSublinks()">{{cat}}</a>
         </div>
     </div>
-    <a class="links navItem" routerLink="/everything/usa/general" (click)="collapseSublinks()">Search</a>
-    <a class="links navItem" routerLink="/likes"  (click)="collapseSublinks()">Likes</a>
 
-    <a class="signOut">Sign Out</a>
+        <a class="links navItem" routerLink="/everything/usa/general" (click)="collapseSublinks()"><i class="nav-icon fas fa-search"></i> Search</a>
+        <a class="links navItem" routerLink="/likes"  (click)="collapseSublinks()"><i class="nav-icon fas fa-heart"></i> Likes</a>
+        
+        <a class="signOut" routerLink="/login" (click)="signOut()">Sign Out</a>
 </div>
 
 
-<div *ngIf="isLoggedIn == false" class="sidenav-body">
+<div *ngIf="isLoggedIn === false" class="sidenav-body">
     <h1 class="sidenavTitle">&#9929; News Ok</h1>
     <div class="centerNotLoggedMessage">
         <div class="notLoggedIcon">&#9972;</div>

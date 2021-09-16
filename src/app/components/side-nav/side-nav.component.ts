@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-side-nav',
@@ -6,13 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-nav.component.scss']
 })
 export class SideNavComponent implements OnInit {
-  isLoggedIn = true;
-  topHeadlineCategories = ['business','entertainment','general','health','science','sports','technology'];
-  dropdownStyle = "navItem dropdown"
+  isLoggedIn: boolean = null;
+  topHeadlineCategories: string[] = ['business','entertainment','general','health','science','sports','technology'];
+  dropdownStyle: string = "navItem dropdown"
 
-  constructor() { }
+  constructor(
+    private fb: FirebaseService,
+  ) { }
 
   ngOnInit(): void {
+    // setTimeout(() => {
+    //   this.isLoggedIn = this.fb.isLoggedIn;
+    // }, 200);
   }
 
   toggleDropdown() {
@@ -25,6 +31,10 @@ export class SideNavComponent implements OnInit {
 
   collapseSublinks() {
     this.dropdownStyle = "navItem dropdown";
+  }
+
+  signOut() {
+    this.fb.signOut();
   }
 
 }

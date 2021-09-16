@@ -16,22 +16,23 @@
 
     .links {
         color: $secondary;
-        font-size: 20px;
+        font-size: 18px;
         text-decoration: none;
     }
     .subLinks { 
         display: block; 
         font-size: 16px;
-        padding: 8px 10px 0px;
+        padding: 8px 0px 0px 30px;
     }
     .dropdown {
         overflow: hidden;
-        height: 22px;
+        height: 28px;
         transition: height .25s;
     }
-    .heightForSublinks { height: 218px; }
+    .heightForSublinks { height: 230px; }
     .dropdownBtn { user-select: none; }
     .dropdownBtn:hover { cursor: pointer; }
+    .nav-icon { font-size: 16px; padding-top: 10px;}
 
 
     .navItem {
@@ -53,6 +54,7 @@
         right: 20px;
 
         color: $secondary;
+        text-decoration: none;
     }
 
     .centerNotLoggedMessage {

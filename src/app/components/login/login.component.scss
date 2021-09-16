@@ -1,0 +1,35 @@
+.centerLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px);
+
+    .signinContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 200px;
+        height: 300px;
+
+        border: 1px solid #80808075;
+        border-radius: 15px;
+        background-color: white;
+        box-shadow: 0px 0px 10px rgb(151, 150, 150);
+
+        .title {
+            margin: 20px 0px 80px;
+            font-weight: bolder;
+            font-size: 30px;
+        }
+        .signinPrompt {
+            font-weight: bold;
+        }
+        .googleLogo {
+            width: 60px;
+            margin-top: 0px;
+        }
+        .signinBtn {
+            margin-top: 25px;
+        }
+    }
+}
