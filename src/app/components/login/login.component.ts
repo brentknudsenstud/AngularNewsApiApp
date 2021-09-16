@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { FormBuilder } from '@angular/forms';
 import { FirebaseService } from 'src/app/services/firebase.service';
-import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-login',
@@ -9,23 +9,16 @@ import { AngularFireAuth } from '@angular/fire/auth';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  isSignedIn: boolean = true;
 
   constructor(
-    private fb: FirebaseService,
-  ) { }
+    public fb: FirebaseService,
+    public afAuth: AngularFireAuth,
+  ) {}
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   signIn() {
     this.fb.signIn();
-  }
-
-  test() {
-    console.log(this.fb.isLoggedIn);
-    console.log(this.fb.user);
   }
 
 }

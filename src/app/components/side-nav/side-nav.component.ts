@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
@@ -13,12 +14,22 @@ export class SideNavComponent implements OnInit {
 
   constructor(
     private fb: FirebaseService,
+    public afAuth: AngularFireAuth,
   ) { }
 
   ngOnInit(): void {
-    // setTimeout(() => {
-    //   this.isLoggedIn = this.fb.isLoggedIn;
-    // }, 200);
+    this.afAuth.authState.subscribe(userState => {
+      if (userState === null) {
+        this.fb.user = null;
+        this.fb.isLoggedIn = false;
+        this.isLoggedIn = false;
+      }
+      else {
+        this.fb.user = userState;
+        this.fb.isLoggedIn = true;
+        this.isLoggedIn = true;
+      }
+    });
   }
 
   toggleDropdown() {

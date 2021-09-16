@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { FirebaseService } from './services/firebase.service';
 
 @Component({
   selector: 'app-root',
@@ -11,23 +9,9 @@ export class AppComponent {
   sideNavShouldOpen:boolean = null;
   sideRespWidth:number = 650;
 
-  constructor(
-    public afAuth: AngularFireAuth,
-    private fb: FirebaseService,
-  ) {}
+  constructor() {}
 
   ngOnInit() {
-    this.afAuth.authState.subscribe(userState => {
-      if (userState === null) {
-        this.fb.user = null;
-        this.fb.isLoggedIn = false;
-      }
-      else {
-        this.fb.user = userState;
-        this.fb.isLoggedIn = true;
-      }
-    });
-
     if (window.innerWidth > 650) { 
       this.sideNavShouldOpen = true;
     }

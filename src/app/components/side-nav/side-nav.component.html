@@ -25,3 +25,10 @@
         <span class="notLoggedIn">Set Sail With Us</span>
     </div>
 </div>
+
+<div *ngIf="isLoggedIn === null" class="sidenav-body">
+    <h1 class="sidenavTitle">&#9929; News Ok</h1>
+    <div class="centerSpinner">
+        <mat-spinner></mat-spinner>
+    </div>
+</div>

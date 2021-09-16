@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common'
 import { BrowserModule } from '@angular/platform-browser';
 
 import { MaterialModule } from './modules/material.module';
@@ -29,6 +30,7 @@ import { NewsApiService } from './services/news-api.service';
     LikesComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
