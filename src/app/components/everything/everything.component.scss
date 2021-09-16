@@ -1,0 +1,45 @@
+@import '../../styles/base';
+
+.mat-toolbar-multiple-rows {
+    
+    background-color: $primary-opacity;
+    width: auto;
+    border-radius: 20px;
+    padding-bottom: 24px;
+    margin: 0 24px 0 24px;
+    color: $secondary;
+    border: 2px solid green;
+}
+
+.hint {
+    color: white;
+}
+
+.search-button {
+    background-color: white;
+}
+
+.search-icon {
+    color: $primary-opacity;
+}
+.page-title-for-everything-page {
+    margin: 24px 0 24px 0;
+
+}
+
+.toolbar-row-2 {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    border: 2px solid yellow;
+
+}
+
+::ng-deep .mat-form-field-infix {
+    padding: 0 24px 16px 0;
+}
+
+.everything-fields-line {
+// 
+   border: 2px solid orange;
+}
