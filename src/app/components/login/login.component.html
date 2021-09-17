@@ -11,8 +11,9 @@
         <h1 class="loggedInMessage">
             Welcome
             <br>
-            {{afAuth.authState | async}}
+            <span *ngIf="afAuth.authState | async as user">{{user.displayName}}</span>
         </h1>
     </div>
 
 </div>
+<!-- <button (click)="test()">test</button> -->

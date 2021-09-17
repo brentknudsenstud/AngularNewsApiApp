@@ -8,13 +8,12 @@ import { FirebaseService } from 'src/app/services/firebase.service';
   styleUrls: ['./side-nav.component.scss']
 })
 export class SideNavComponent implements OnInit {
-  isLoggedIn: boolean = null;
   topHeadlineCategories: string[] = ['business','entertainment','general','health','science','sports','technology'];
   dropdownStyle: string = "navItem dropdown"
 
   constructor(
-    private fb: FirebaseService,
-    public afAuth: AngularFireAuth,
+    public fb: FirebaseService,
+    private afAuth: AngularFireAuth,
   ) { }
 
   ngOnInit(): void {
@@ -22,12 +21,10 @@ export class SideNavComponent implements OnInit {
       if (userState === null) {
         this.fb.user = null;
         this.fb.isLoggedIn = false;
-        this.isLoggedIn = false;
       }
       else {
         this.fb.user = userState;
         this.fb.isLoggedIn = true;
-        this.isLoggedIn = true;
       }
     });
   }

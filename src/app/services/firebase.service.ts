@@ -13,7 +13,8 @@ export class FirebaseService {
   constructor(
     public afAuth: AngularFireAuth,
     public route: Router,
-  ) { }
+  ) {}
+
 
   signIn() {
     const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
@@ -27,10 +28,11 @@ export class FirebaseService {
   }
 
   signOut() {
-    this.afAuth.signOut();
-    this.isLoggedIn = false;
-    this.user = null;
-    this.route.navigate(['/login'])
+    this.afAuth.signOut().then(x => {
+      this.isLoggedIn = false;
+      this.user = null;
+      this.route.navigate(['/login']);
+    });
   }
 
 }

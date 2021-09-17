@@ -1,4 +1,4 @@
-<div *ngIf="isLoggedIn === true" class="sidenav-body">
+<div *ngIf="fb.isLoggedIn === true" class="sidenav-body">
     <h1 class="sidenavTitle">The News</h1>
 
     <div [class]="dropdownStyle">
@@ -18,7 +18,7 @@
 </div>
 
 
-<div *ngIf="isLoggedIn === false" class="sidenav-body">
+<div *ngIf="fb.isLoggedIn === false" class="sidenav-body">
     <h1 class="sidenavTitle">&#9929; News Ok</h1>
     <div class="centerNotLoggedMessage">
         <div class="notLoggedIcon">&#9972;</div>
@@ -26,7 +26,7 @@
     </div>
 </div>
 
-<div *ngIf="isLoggedIn === null" class="sidenav-body">
+<div *ngIf="fb.isLoggedIn === null" class="sidenav-body">
     <h1 class="sidenavTitle">&#9929; News Ok</h1>
     <div class="centerSpinner">
         <mat-spinner></mat-spinner>
