@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router'
+import { take } from 'rxjs/operators';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 import firebase from 'firebase/app';
 
@@ -8,11 +10,13 @@ import firebase from 'firebase/app';
 })
 export class FirebaseService {
   isLoggedIn: boolean = null;
+  signOutHappening = null;
   user:any;
 
   constructor(
-    public afAuth: AngularFireAuth,
-    public route: Router,
+    private afAuth: AngularFireAuth,
+    private route: Router,
+    private db: AngularFirestore,
   ) {}
 
 
@@ -20,8 +24,14 @@ export class FirebaseService {
     const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
     this.afAuth.signInWithPopup(googleAuthProvider).then(() => {
       this.isLoggedIn = true;
+      this.signOutHappening = false;
       this.afAuth.authState.subscribe(data => {
-        this.user = data;
+
+        if(this.signOutHappening === true) {} //circumvents authState.subscribe on signout;
+        else {
+          this.user = data;
+          this.development(this.user.uid);
+        }
       });
     });
     
@@ -32,7 +42,17 @@ export class FirebaseService {
       this.isLoggedIn = false;
       this.user = null;
       this.route.navigate(['/login']);
+      this.signOutHappening = true;
     });
+  }
+
+  development(id) {
+    console.log(id);
+    let ref = this.db.doc(`/users/${id}`);
+    ref.set({}, { merge: true});
+    
+
+
   }
 
 }
