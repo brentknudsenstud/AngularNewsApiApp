@@ -1,1 +1,19 @@
-<p>login works!</p>
+<div class="centerLogin">
+
+    <div *ngIf="fb.isLoggedIn === false" class="signinContainer">
+        <span class="title">Cool News</span>
+        <img class="googleLogo" src="../../../assets/google-logo.png" alt="Google logo">
+        <span class="signinPrompt">Sign-in with Google</span>
+        <button class="signinBtn" mat-raised-button color="primary" (click)="signIn()">Sign In</button>
+    </div>
+
+    <div *ngIf="fb.isLoggedIn === true" class="signedInContainer">
+        <h1 class="loggedInMessage">
+            Welcome
+            <br>
+            <span *ngIf="afAuth.authState | async as user">{{user.displayName}}</span>
+        </h1>
+    </div>
+
+</div>
+<!-- <button (click)="test()">test</button> -->

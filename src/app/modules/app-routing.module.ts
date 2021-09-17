@@ -4,12 +4,13 @@ import { EverythingComponent } from 'src/app/components/everything/everything.co
 import { LoginComponent } from 'src/app/components/login/login.component';
 import { TopHeadlinesComponent } from 'src/app/components/top-headlines/top-headlines.component';
 import { LikesComponent } from 'src/app/components/likes/likes.component';
+import { AuthGuard } from '../guards/auth.guard';
 
 const routes: Routes = [
   {path: "login", component: LoginComponent },
-  {path: "top-headlines/:category", component: TopHeadlinesComponent},
-  {path: "everything/:query/:category", component: EverythingComponent},
-  {path: "likes", component: LikesComponent},
+  {path: "top-headlines/:category", component: TopHeadlinesComponent, canActivate: [AuthGuard] },
+  {path: "everything/:query/:category", component: EverythingComponent, canActivate: [AuthGuard] },
+  {path: "likes", component: LikesComponent, canActivate: [AuthGuard] },
   {path: "", redirectTo: "/login", pathMatch: "full"},
 ];
 
