@@ -19,8 +19,10 @@ form.everythingForm {
 .formfield {
     margin-right: 36px;
     margin-left: 5px;
+    margin-bottom: 24px;
     // border: solid 2px red;
     // flex-grow: 3;
+    
     
 }
 .formfield select {
@@ -31,7 +33,7 @@ form.everythingForm {
 }
 
 input {
-    padding: 20px;
+    padding: 6px 20px;
     background-color: $primary-opacity;
     border: none;
     font-size: 20px;
@@ -41,6 +43,7 @@ input {
     // width: 140px;
     width: 120px;
     box-shadow: $primary-box-shad;
+    height: 30px;
 }
 ::placeholder {
     color: gray;
@@ -91,7 +94,7 @@ input:focus {
 
 select {
     font-size: 20px;
-    padding: 20px;
+    padding: 6px 20px;
     box-shadow: $primary-box-shad;
     width: 160px;
 }
