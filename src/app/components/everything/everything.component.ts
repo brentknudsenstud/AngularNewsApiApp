@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { NewsApiService } from 'src/app/services/news-api.service';
 import { HttpClient } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-everything',
   templateUrl: './everything.component.html',
