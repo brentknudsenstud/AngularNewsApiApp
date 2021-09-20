@@ -6,8 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  sideNavShouldOpen = true;
-  sideRespWidth = 650;
+  sideNavShouldOpen:boolean = null;
+  sideRespWidth:number = 650;
+
+  constructor() {}
+
+  ngOnInit() {
+    if (window.innerWidth > 650) { 
+      this.sideNavShouldOpen = true;
+    }
+    else { 
+      this.sideNavShouldOpen = false; 
+    }
+  }
 
   shouldOpen() {
     if (window.innerWidth > this.sideRespWidth && this.sideNavShouldOpen != true) {

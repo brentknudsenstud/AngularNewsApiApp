@@ -1,34 +1,75 @@
-<mat-toolbar class="everything-toolbar">
-
-    <mat-toolbar-row class="page-title-for-everything-page">
-        <span>Everything</span>
-    </mat-toolbar-row>
+<!-- <mat-toolbar class="everything-toolbar">
+    <div class="toolbar-row-1">
+        <mat-toolbar-row class="page-title">
+            <p>Everything is awesome everything is cool whne you're part of team.</p>
+            <p>Everything is awesomewhen you're living a dream</p>
+        </mat-toolbar-row>
+    </div>
 
     <mat-toolbar-row>
-        <div class="toolbar-row-2">
-            <form class="everything-form">
-                <mat-form-field class="everything-fields-line">
-                    <input matInput #message maxlength="256" placeholder="Ex: COVID-19">
-                    <mat-hint class="hint" align="end">{{message.value.length}} / 256</mat-hint>
-                </mat-form-field>
-                <mat-form-field class="everything-fields-line">
-                    <mat-label>News Category</mat-label>
-                    <mat-select class="everything-fields-line">
-                        <mat-option value="red">business</mat-option>
-                        <mat-option value="green">entertainment</mat-option>
-                        <mat-option value="blue">general</mat-option>
-                        <mat-option value="blue">health</mat-option>
-                        <mat-option value="blue">science</mat-option>
-                        <mat-option value="blue">sports</mat-option>
-                        <mat-option value="blue">technology</mat-option>
-                    </mat-select>
-                    <button mat-fab class="search-button everything-fields-line"
-                        aria-label="icon button with a search icon">
-                        <mat-icon class="search-icon">search</mat-icon>
-                    </button>
-                </mat-form-field>
 
-            </form>
+        <div class="toolbar-row-2">
+        <form class="everything-form">
+
+            <mat-form-field class="everything-fields-line">
+                <input matInput #message maxlength="256" placeholder="search term here">
+                <mat-hint class="hint" align="end">{{message.value.length}} / 256</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field class="everything-fields-line">
+
+                <mat-label>News Category</mat-label>
+
+                <mat-select>
+                    <mat-option value="red">business</mat-option>
+                    <mat-option value="green">entertainment</mat-option>
+                    <mat-option value="blue">general</mat-option>
+                    <mat-option value="blue">health</mat-option>
+                    <mat-option value="blue">science</mat-option>
+                    <mat-option value="blue">sports</mat-option>
+                    <mat-option value="blue">technology</mat-option>
+                </mat-select>
+
+                <button mat-fab class="search-button" aria-label="icon button with a search icon">
+                    <mat-icon class="search-icon">search</mat-icon>
+                </button>
+
+            </mat-form-field>
+        </form>
         </div>
+
     </mat-toolbar-row>
-</mat-toolbar>
+
+</mat-toolbar> -->
+
+<div class="box">
+
+    <h1>Everything</h1>
+
+    <div class="row">
+    <form class="everythingForm">
+        <div class="formfield">
+
+            <input placeholder="Type search term here">
+
+        </div>
+        <div class="formfield">
+            <select>
+                <option value="red">business</option>
+                <option value="green">entertainment</option>
+                <option value="blue">general</option>
+                <option value="blue">health</option>
+                <option value="blue">science</option>
+                <option value="blue">sports</option>
+                <option value="blue">technology</option>
+            </select>
+        </div>
+        <div class="formfield">
+            <button mat-fab class="search-button" aria-label="icon button with a search icon">
+                <mat-icon class="search-icon">search</mat-icon>
+            </button>
+        </div>
+    </form>
+    </div>
+
+</div>

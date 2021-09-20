@@ -1,45 +1,116 @@
 @import '../../styles/base';
 
-.mat-toolbar-multiple-rows {
-    
-    background-color: $primary-opacity;
-    width: auto;
-    border-radius: 20px;
-    padding-bottom: 24px;
-    margin: 0 24px 0 24px;
+h1 {
     color: $secondary;
-    border: 2px solid green;
+    font-size: 26px;
+    position: relative;
+    margin-left: 24px;
+    // display: flex;
+    // flex-direction: row;
+
 }
 
-.hint {
+form.everythingForm {
+    // border: 2px solid orange; 
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+.formfield {
+    margin-right: 36px;
+    margin-left: 5px;
+    // border: solid 2px red;
+    // flex-grow: 3;
+    
+}
+.formfield select {
+    background-color: $primary-opacity;
+    color: $secondary;
+    border: none;
+    cursor: pointer;
+}
+
+input {
+    padding: 20px;
+    background-color: $primary-opacity;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+::placeholder {
     color: white;
+    background-color: $primary-opacity;
+}
+
+.mat-select-placeholder {
+    width: 150px;
+}
+
+// .mat-primary[_ngcontent-gwo-c98] {
+//     color: white;
+// }
+
+.box {
+    background-color: $primary;
+    width: auto;
+    // display: flex;
+    // flex-flow: row wrap;
+    // justify-content: space-evenly;
+    // align-items: center;
+    border-radius: 20px;
+    padding: 24px;
+    margin: 24px 24px 24px 24px;
+}
+
+.row {
+    color: $secondary;
+    // border: 2px solid red;
+    padding-right: 12px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+fieldset {
+    margin-right: 26px;
+    flex-grow: 2;
+    border: 2px green solid;
+}
+
+input:focus {
+    outline: none;
+    color: $secondary;
+}
+
+select {
+    font-size: 20px;
+    padding: 20px;
+}
+
+select:focus {
+    outline: none;
+}
+
+::ng-deep option {
+    color: $primary-opacity;
 }
 
 .search-button {
-    background-color: white;
+    background-color: $primary-opacity;
 }
 
 .search-icon {
-    color: $primary-opacity;
-}
-.page-title-for-everything-page {
-    margin: 24px 0 24px 0;
-
-}
-
-.toolbar-row-2 {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
-    border: 2px solid yellow;
-
+    color: $secondary;
 }
 
 ::ng-deep .mat-form-field-infix {
-    padding: 0 24px 16px 0;
+    // margin: 0 24px 24px 0;
+    border: 3px dotted rgb(241, 149, 241);
+    color: $secondary;
 }
 
-.everything-fields-line {
-// 
-   border: 2px solid orange;
+::ng-deep .mat-form-field-legacy {
+    color: $primary;
 }
