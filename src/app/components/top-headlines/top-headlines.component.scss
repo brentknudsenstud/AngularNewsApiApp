@@ -1,0 +1,54 @@
+@import '../../styles/base';
+
+.topHeadlineMenu {
+    color: white;
+    background-color: $primary-opacity;
+    padding: 16px;
+    margin: 24px;
+    border-radius: 10px;
+    
+    h1 { font-size: 26px; }
+    .chip-container {
+        
+        .chip {
+            display: inline-block;
+            height: 20px;
+            color: black;
+            text-decoration: none;
+            padding: 4px;
+            margin-right: 10px;
+
+            background-color: #dbdbdb;
+            border: 1px solid black;
+            border-radius: 20px;
+            transition: background-color 0.5s, box-shadow 0.2s;
+        }
+        .chip:hover { background-color: white; box-shadow: 0px 0px 5px #999999;}
+        .activeRoute { font-weight: 500; background-color: white; }
+    }
+}
+
+
+
+
+@media only screen and (max-width: 860px) {
+    .topHeadlineMenu {
+        .chip-container {
+            display: flex;
+            flex-wrap:wrap;
+
+            .chip {
+                margin-right: 5px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 286px) {
+    .topHeadlineMenu {
+        .chip-container {
+            .chip {
+                margin-right: 0px;
+            }
+        }
+    }
+}

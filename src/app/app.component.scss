@@ -29,7 +29,7 @@
 
 .sidenav {
     max-width: 250px;
-    width: 250px;
+    width: 220px;
     background-color: $primary-opacity;
     border: none;
     border-radius: 0px 20px 20px 0px;
@@ -56,10 +56,6 @@
 
 //MEDIA-QUERY--------------------------------------------------------------
 @media screen and (max-width: 800px) {
-    .sidenav {
-        max-width: 220px;
-        width: 220px;
-    }
     .toggle-sidenav {
         display: inline-block;
     }
