@@ -6,6 +6,10 @@ h1 {
     position: relative;
 }
 
+.formfield {
+    display: inline-block;
+}
+
 .formfield select {
     background-color: $primary-opacity;
     color: $secondary;
@@ -24,6 +28,7 @@ input {
     height: 30px;
     margin-right: 12px;
     margin-bottom: 12px;
+    color: $secondary;
 }
 ::placeholder {
     color: gray;
