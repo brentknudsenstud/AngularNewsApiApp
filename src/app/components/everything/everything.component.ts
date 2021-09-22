@@ -11,7 +11,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EverythingComponent implements OnInit {
   apiPayload: any = "loading";
-
+  select: string = '';
+  input: string = '';
   constructor(
     private api: NewsApiService,
     private route: ActivatedRoute,
@@ -19,16 +20,25 @@ export class EverythingComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.url.subscribe( url => {
+    this.route.url.subscribe(url => {
       const query = url[1].path;
+      this.input = url[1].path;
       const category = url[2].path;
-      const link = this.api.everythingEndpoint(query,category);
+      this.select = url[2].path;
+      const link = this.api.everythingEndpoint(query, category);
       // this.http.get(link).subscribe(data => {
       //   this.apiPayload = data;
       // });
       this.apiPayload = link;
     });
   }
-
+  // speak(value) {
+  //   console.log(value);
+  // }
+  buildLink() {
+    let inputOption = this.input == "" ? "usa" : this.input;
+    let base = `/everything/${inputOption}/${this.select}`;
+    return base;
+  }
 
 }

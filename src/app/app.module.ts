@@ -19,6 +19,7 @@ import { EverythingComponent } from './components/everything/everything.componen
 import { LikesComponent } from './components/likes/likes.component';
 import { HttpClientModule } from '@angular/common/http'
 import { NewsApiService } from './services/news-api.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { NewsApiService } from './services/news-api.service';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    FormsModule,
   ],
   providers: [NewsApiService],
   bootstrap: [AppComponent]
