@@ -15,7 +15,7 @@ export class TopHeadlinesComponent implements OnInit {
     private api: NewsApiService,
     private route: ActivatedRoute,
     private http: HttpClient,
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.route.url.subscribe( url => {
@@ -27,6 +27,5 @@ export class TopHeadlinesComponent implements OnInit {
       this.apiPayload = link;
     });
   }
-
 
 }

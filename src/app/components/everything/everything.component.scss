@@ -70,6 +70,10 @@ select {
     margin-right: 12px;
 }
 
+option {
+    color: $secondary
+}
+
 .customize-button {
     border-radius: 50%;
     border-style: hidden;
