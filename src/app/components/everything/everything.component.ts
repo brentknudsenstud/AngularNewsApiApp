@@ -32,9 +32,6 @@ export class EverythingComponent implements OnInit {
       this.apiPayload = link;
     });
   }
-  // speak(value) {
-  //   console.log(value);
-  // }
   buildLink() {
     let inputOption = this.input == "" ? "usa" : this.input;
     let base = `/everything/${inputOption}/${this.select}`;

@@ -6,6 +6,10 @@ h1 {
     position: relative;
 }
 
+.formfield {
+    display: inline-block;
+}
+
 .formfield select {
     background-color: $primary-opacity;
     color: $secondary;
