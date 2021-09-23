@@ -9,6 +9,7 @@
     .container1 {
         display: flex; //flex
         height: 150px;
+        width: 100%;
         background-color: white;
         position: absolute;
     
@@ -34,7 +35,7 @@
             margin: 8px;
         }
     }
-    .setOpacity { opacity: 0.5; }
+    .setOpacity { opacity: 0; }
 
 
     .container2 {
@@ -57,16 +58,19 @@
         .description-container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             position: absolute;
-            height: 130px;
-            margin: 10px;
+            height: 100%;
+            width: 100%;
+            margin-top: 10px;
+            padding: 5px 0px;
             text-align: center;
             background-color: white;
         }
         .description-title { font-size: 12px; font-style: italic; text-decoration: underline;}
         .description {
-            line-height: 14px;
+            line-height: 12px;
+            max-height: 50px;
+            overflow-y: scroll;
         }
     
     }
@@ -74,9 +78,34 @@
 
     .articleBtn {
         position: absolute;
-        top: 130px;
+        bottom: 5px;
         right: 10px;
     }
+    .flipBtn {
+        opacity: 1;
+        position: absolute;
+        bottom: 25px;
+        right: 15px;
+        color: gray;
+        background-color: #ffffff00;
+        border: none;
+    
+    }
+    .likes {
+        margin-left: 5px;
+        padding: 2px 4px;
+        border-radius: 5px;
+        background-color: $primary;
+    }
+    .toArticle {
+        color: $secondary;
+        background-color: $primary;
+        padding: 2px 4px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+    .heart-pink { color: #fc3556; }
+    .icon-white { color: $secondary; }
 }
 
 
