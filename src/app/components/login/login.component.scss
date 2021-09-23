@@ -5,7 +5,8 @@
     justify-content: center;
     align-items: center;
     height: calc(100vh - 100px);
-    color: $primary-opacity;
+    // color: $primary-opacity;
+    color: $primary;
 
     .signinContainer {
         display: flex;
@@ -41,6 +42,7 @@
         }
         .signinBtn {
             margin-top: 25px;
+            background-color: #3c3e7ce5;
         }
     }
 
