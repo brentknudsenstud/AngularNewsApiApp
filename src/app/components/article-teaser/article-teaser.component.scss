@@ -1,0 +1,118 @@
+@import '../../styles/base';
+
+.articleContainer {
+    margin: $primary-margin-header;
+    position: relative;
+    border: 1px solid #eeeeee;
+    height: 150px;
+
+    .container1 {
+        display: flex; //flex
+        height: 150px;
+        width: 100%;
+        background-color: white;
+        position: absolute;
+    
+        img {
+            height: 150px;
+            width: 100px;
+            object-fit: cover;
+        }
+        .title {
+            max-height: 100px;
+            padding: 0px;
+            font-size: 15px;
+            overflow: scroll;
+            font-weight: bold;
+        }
+        .author {
+            font-size: 12px;
+            font-style: italic;
+            position: relative;
+            bottom: 20px;
+        }
+        .text-container {
+            margin: 8px;
+        }
+    }
+    .setOpacity { opacity: 0; }
+
+
+    .container2 {
+        display: block;
+        height: 150px;
+        width: 100%;
+        position: absolute;
+        overflow: hidden;
+
+        background-image: url('../../../assets/newsPaper.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    
+        img {
+            position: absolute;
+            object-fit: cover;
+            width: 100%
+        }
+        .description-container {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            margin-top: 10px;
+            padding: 5px 0px;
+            text-align: center;
+            background-color: white;
+        }
+        .description-title { font-size: 12px; font-style: italic; text-decoration: underline;}
+        .description {
+            line-height: 12px;
+            max-height: 50px;
+            overflow-y: scroll;
+        }
+    
+    }
+
+
+    .articleBtn {
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+    }
+    .flipBtn {
+        opacity: 1;
+        position: absolute;
+        bottom: 25px;
+        right: 15px;
+        color: gray;
+        background-color: #ffffff00;
+        border: none;
+    
+    }
+    .likes {
+        margin-left: 5px;
+        padding: 2px 4px;
+        border-radius: 5px;
+        background-color: $primary;
+    }
+    .toArticle {
+        color: $secondary;
+        background-color: $primary;
+        padding: 2px 4px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+    .heart-pink { color: #fc3556; }
+    .icon-white { color: $secondary; }
+}
+
+
+// @media only screen and (max-width: 0px) {
+//     .articleContainer {
+//         .title {
+//             font-size: 15px;
+//         }
+//     }
+//   }

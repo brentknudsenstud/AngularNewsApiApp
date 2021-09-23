@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsApiService } from 'src/app/services/news-api.service';
 
 @Component({
   selector: 'app-likes',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./likes.component.scss']
 })
 export class LikesComponent implements OnInit {
-
-  constructor() { }
+  dumby = this.api.dumby;
+  
+  constructor(
+    private api: NewsApiService,
+  ) { }
 
   ngOnInit(): void {
   }

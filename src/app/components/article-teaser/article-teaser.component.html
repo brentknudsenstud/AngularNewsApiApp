@@ -1,0 +1,25 @@
+<div class="articleContainer">
+    <div class="container2">
+        <div class="description-container">
+            <div class="description-title">Description:</div>
+            <div class="description">{{data.description}}</div>
+            <div class="description-title">Published At:</div>
+            <div class="description">{{data.publishedAt}}</div>
+        </div>
+    </div>
+
+    <div class="container1">
+        <img [src]="data.urlToImage" alt="hello">
+        <div class="text-container">
+            <div class="title">{{data.title}}</div>
+            <div class="author">{{data.author}}</div>
+        </div>
+    </div>
+
+    <button class="flipBtn" (click)="multiBtn($event)">more details...</button>
+
+    <div class="articleBtn">
+        <a [href]="data.url" target="_blank" class="toArticle">To Article&nbsp;<i class="fas fa-sign-in-alt icon-white"></i></a>
+        <span (click)="likeClicked()" class="likes"><i class="fas fa-heart icon-white"></i></span>
+    </div>
+</div>
