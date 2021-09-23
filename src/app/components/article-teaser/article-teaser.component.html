@@ -1,0 +1,22 @@
+<div class="articleContainer">
+    <div class="container2">
+        <!-- <img [src]="dumby.urlToImage" alt="hello"> -->
+        <div class="description-container">
+            <div class="description-title">Description:</div>
+            <div class="description">{{dumby.description}}</div>
+        </div>
+    </div>
+
+    <div class="container1">
+        <img [src]="dumby.urlToImage" alt="hello">
+        <div class="text-container">
+            <div class="title">{{dumby.title}}</div>
+            <div class="author">{{dumby.author}}</div>
+            <button (click)="yee($event)">test</button>
+        </div>
+    </div>
+
+    <div class="articleBtn"><i style="color:green;" class="fas fa-heart"></i><i style="color:red;" class="fas fa-sign-in-alt"></i></div>
+</div>
+
+<!-- <div><i style="color:green;" class="fas fa-heart"></i><i style="color:red;" class="fas fa-sign-in-alt"></i></div> -->

@@ -20,6 +20,7 @@ import { LikesComponent } from './components/likes/likes.component';
 import { HttpClientModule } from '@angular/common/http'
 import { NewsApiService } from './services/news-api.service';
 import { FormsModule } from '@angular/forms';
+import { ArticleTeaserComponent } from './components/article-teaser/article-teaser.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FormsModule } from '@angular/forms';
     TopHeadlinesComponent,
     EverythingComponent,
     LikesComponent,
+    ArticleTeaserComponent,
   ],
   imports: [
     CommonModule,
