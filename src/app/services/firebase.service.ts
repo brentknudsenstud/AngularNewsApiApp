@@ -51,8 +51,6 @@ export class FirebaseService {
     let ref = this.db.doc(`/users/${id}`);
     ref.set({}, { merge: true});
     
-
-
   }
 
 }
