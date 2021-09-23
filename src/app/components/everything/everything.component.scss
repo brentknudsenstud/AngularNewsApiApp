@@ -110,3 +110,9 @@ select:focus {
 ::ng-deep .mat-form-field-legacy {
     color: $primary;
 }
+
+.articleBox {
+    height: calc(100vh - 220px);
+    overflow-y: scroll;
+    border: 2px solid orange;
+}

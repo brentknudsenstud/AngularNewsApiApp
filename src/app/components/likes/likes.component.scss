@@ -20,4 +20,9 @@ mat-tab-group {
     height: calc(100vh - 115px);
 }
 
+.articleBox {
+    height: calc(100vh - 220px);
+    overflow-y: scroll;
+    border: 2px solid orange;
+}
 
