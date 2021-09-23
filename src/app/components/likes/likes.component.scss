@@ -16,8 +16,16 @@ h1 {
     border-radius: $primary-bord-rad;
 }
 
-mat-tab-group {
+/* This changes the padding of the container to keep it from butting up against the edge */
+.mat-tab-group {
     height: calc(100vh - 115px);
+    padding: 0 9px;
+    width: auto;
 }
+
+
+
+
+
 
 
