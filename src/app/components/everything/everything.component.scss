@@ -1,0 +1,112 @@
+@import '../../styles/base';
+
+h1 {
+    color: $secondary;
+    font-size: 26px;
+    position: relative;
+}
+
+.formfield {
+    display: inline-block;
+}
+
+.formfield select {
+    background-color: $primary-opacity;
+    color: $secondary;
+    border: none;
+    cursor: pointer;
+}
+
+input {
+    padding: 6px 20px;
+    background-color: $primary-opacity;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    width: 120px;
+    box-shadow: $primary-box-shad;
+    height: 30px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    color: $secondary;
+}
+::placeholder {
+    color: gray;
+    background-color: $primary-opacity;
+}
+
+.box {
+    background-color: $everything-container-primary;
+    width: auto;
+    border-radius: $primary-bord-rad;
+    padding: 16px;
+    margin: $primary-margin-header;
+}
+
+.row {
+    color: $secondary;
+    padding-right: 12px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;// 
+    align-items: center;
+    
+}
+
+fieldset {
+    flex-grow: 2;
+    border: 2px green solid;
+}
+
+input:focus {
+    outline: none;
+    color: $secondary;
+}
+
+select {
+    font-size: 20px;
+    padding: 9px 10px 9px 20px;
+    box-shadow: $primary-box-shad;
+    margin-right: 12px;
+}
+
+option {
+    color: $secondary
+}
+
+.customize-button {
+    border-radius: 50%;
+    border-style: hidden;
+    border-color: none;
+    padding: 14px;
+    background-color: $primary-opacity;
+    color: $secondary;
+    box-shadow: $primary-box-shad;
+    margin-left: 7px;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+}
+
+::ng-deep option {
+    color: $primary-opacity;
+}
+
+.search-button {
+    background-color: $primary-opacity;
+}
+
+.search-icon {
+    color: $secondary;
+}
+
+::ng-deep .mat-form-field-infix {
+    // border: 3px dotted rgb(241, 149, 241);
+    color: $secondary;
+}
+
+::ng-deep .mat-form-field-legacy {
+    color: $primary;
+}

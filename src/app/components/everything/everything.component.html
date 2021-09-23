@@ -1,1 +1,26 @@
-<p>everything works!</p>
+<div class="box">
+
+    <h1>Everything</h1>
+
+    <div class="row">
+        <div class="everythingForm" name="everythingForm">
+            <div class="formfield">
+                <input [(ngModel)]="input" type="text" placeholder="Search . . .">
+            </div>
+            <div class="formfield">
+                <select [(ngModel)]="select">
+                    <option value="business">business</option>
+                    <option value="entertainment">entertainment</option>
+                    <option value="general" selected>general</option>
+                    <option value="health">health</option>
+                    <option value="science">science</option>
+                    <option value="sports">sports</option>
+                    <option value="technology">technology</option>
+                </select>
+                <button class="customize-button" (click)="buildLink()" [routerLink]="buildLink()">
+                    <i class="nav-icon fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
