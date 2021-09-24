@@ -33,7 +33,7 @@
     width: 220px;
     background-color: $primary-opacity;
     border: none;
-    border-radius: 0px 20px 20px 0px;
+    border-radius: 0px 10px 10px 0px;
 }
 
 .toggle-sidenav {
@@ -45,6 +45,8 @@
     font-weight: bolder;
     border: none;
 }
+.noDisplay { display: none; }
+
 
 
 

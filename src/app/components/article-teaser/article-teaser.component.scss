@@ -3,7 +3,8 @@
 .articleContainer {
     margin: $primary-margin-header;
     position: relative;
-    border: 1px solid #eeeeee;
+    border: 1px solid $primary-opacity;
+    border-radius: 5px;
     height: 150px;
 
     .container1 {
@@ -36,6 +37,7 @@
         }
     }
     .setOpacity { opacity: 0; }
+    .noDisplay { display: none; }
 
 
     .container2 {
@@ -62,14 +64,15 @@
             height: 100%;
             width: 100%;
             margin-top: 10px;
-            padding: 5px 0px;
+            padding: 2px 0px;
             text-align: center;
             background-color: white;
         }
         .description-title { font-size: 12px; font-style: italic; text-decoration: underline;}
         .description {
+            font-size: 12px;
             line-height: 12px;
-            max-height: 50px;
+            max-height: 45px;
             overflow-y: scroll;
         }
     
@@ -85,7 +88,7 @@
         opacity: 1;
         position: absolute;
         bottom: 25px;
-        right: 15px;
+        right: 22px;
         color: gray;
         background-color: #ffffff00;
         border: none;
@@ -109,10 +112,39 @@
 }
 
 
-// @media only screen and (max-width: 0px) {
-//     .articleContainer {
-//         .title {
-//             font-size: 15px;
-//         }
-//     }
-//   }
+@media only screen and (min-width: 600px) {
+    .articleContainer {
+        .container1 {
+            img {
+                width: 180px;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 750px) {
+    .articleContainer {
+        .container1 {
+            .title {
+                max-height: 100px;
+                padding: 5px;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .author {
+                font-size: 15px;
+                margin-left: 5px;
+            }
+        }
+        .container2 {
+            .description-container{
+                .description-title { font-size: 15px; margin-top: 5px; }
+                .description {
+                    font-size: 14px;
+                    line-height: 12px;
+                    max-height: 45px;
+                    overflow-y: scroll;
+                }
+            }
+        }
+    }
+}

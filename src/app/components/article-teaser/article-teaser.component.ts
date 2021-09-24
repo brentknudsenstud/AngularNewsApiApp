@@ -16,7 +16,7 @@ export class ArticleTeaserComponent implements OnInit {
   multiBtn(event) {
     let curClass = event.path[1].children[1].className;
     if (curClass === "container1") {
-      curClass = "container1 setOpacity"
+      curClass = "container1 noDisplay"
       event.path[1].children[1].className = curClass;
     }
     else {

@@ -63,7 +63,7 @@ fieldset {
 
 input:focus {
     outline: none;
-    color: rgb(122, 122, 122);
+    color: $primary;
     background-color: $secondary;
 }
 
@@ -76,7 +76,7 @@ select {
 }
 
 option {
-    color: $secondary
+    color: $primary
 }
 
 .customize-button {
@@ -118,7 +118,24 @@ select:focus {
 }
 
 .articleBox {
-    height: calc(100vh - 220px);
+    height: calc(100vh - 195px);
     overflow-y: scroll;
-    border: 2px solid orange;
+}
+
+
+.firstCollapse {
+    display: inline;
+}
+.secondCollapse {
+    display: inline;
+}
+
+@media screen and (max-width: 723px) {
+    .firstCollapse { display: block; }
+    .articleBox { height: calc(100vh - 249px); }
+}
+
+@media screen and (max-width: 550px) {
+    .secondCollapse { display: block; }
+    .articleBox { height: calc(100vh - 291px); }
 }
