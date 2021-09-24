@@ -1,0 +1,150 @@
+@import '../../styles/base';
+
+.articleContainer {
+    margin: $primary-margin-header;
+    position: relative;
+    border: 1px solid $primary-opacity;
+    border-radius: 5px;
+    height: 150px;
+
+    .container1 {
+        display: flex; //flex
+        height: 150px;
+        width: 100%;
+        background-color: white;
+        position: absolute;
+    
+        img {
+            height: 150px;
+            width: 100px;
+            object-fit: cover;
+        }
+        .title {
+            max-height: 100px;
+            padding: 0px;
+            font-size: 15px;
+            overflow: scroll;
+            font-weight: bold;
+        }
+        .author {
+            font-size: 12px;
+            font-style: italic;
+            position: relative;
+            bottom: 20px;
+        }
+        .text-container {
+            margin: 8px;
+        }
+    }
+    .setOpacity { opacity: 0; }
+    .noDisplay { display: none; }
+
+
+    .container2 {
+        display: block;
+        height: 150px;
+        width: 100%;
+        position: absolute;
+        overflow: hidden;
+
+        background-image: url('../../../assets/newsPaper.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    
+        img {
+            position: absolute;
+            object-fit: cover;
+            width: 100%
+        }
+        .description-container {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            margin-top: 10px;
+            padding: 2px 0px;
+            text-align: center;
+            background-color: white;
+        }
+        .description-title { font-size: 12px; font-style: italic; text-decoration: underline;}
+        .description {
+            font-size: 12px;
+            line-height: 12px;
+            max-height: 45px;
+            overflow-y: scroll;
+        }
+    
+    }
+
+
+    .articleBtn {
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+    }
+    .flipBtn {
+        opacity: 1;
+        position: absolute;
+        bottom: 25px;
+        right: 22px;
+        color: gray;
+        background-color: #ffffff00;
+        border: none;
+    
+    }
+    .likes {
+        margin-left: 5px;
+        padding: 2px 4px;
+        border-radius: 5px;
+        background-color: $primary;
+    }
+    .toArticle {
+        color: $secondary;
+        background-color: $primary;
+        padding: 2px 4px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+    .heart-pink { color: #fc3556; }
+    .icon-white { color: $secondary; }
+}
+
+
+@media only screen and (min-width: 600px) {
+    .articleContainer {
+        .container1 {
+            img {
+                width: 180px;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 750px) {
+    .articleContainer {
+        .container1 {
+            .title {
+                max-height: 100px;
+                padding: 5px;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .author {
+                font-size: 15px;
+                margin-left: 5px;
+            }
+        }
+        .container2 {
+            .description-container{
+                .description-title { font-size: 15px; margin-top: 5px; }
+                .description {
+                    font-size: 14px;
+                    line-height: 12px;
+                    max-height: 45px;
+                    overflow-y: scroll;
+                }
+            }
+        }
+    }
+}

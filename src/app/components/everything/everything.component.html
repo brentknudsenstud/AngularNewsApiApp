@@ -7,7 +7,7 @@
             <div class="formfield">
                 <input [(ngModel)]="input" type="text" placeholder="Search . . .">
             </div>
-            <div class="formfield">
+            <div class="formfield firstCollapse">
                 <select [(ngModel)]="select">
                     <option value="business">business</option>
                     <option value="entertainment">entertainment</option>
@@ -17,10 +17,16 @@
                     <option value="sports">sports</option>
                     <option value="technology">technology</option>
                 </select>
-                <button class="customize-button" (click)="buildLink()" [routerLink]="buildLink()">
-                    <i class="nav-icon fas fa-search"></i>
-                </button>
+                <span class="secondCollapse">
+                    <button class="customize-button" (click)="buildLink()" [routerLink]="buildLink()">
+                        <i class="nav-icon fas fa-search"></i>
+                    </button>
+                </span>
             </div>
         </div>
     </div>
+</div>
+
+<div class="articleBox">
+    <app-article-teaser *ngFor="let src of dumby.articles" [data]="src"></app-article-teaser>
 </div>

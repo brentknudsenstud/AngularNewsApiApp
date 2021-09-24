@@ -1,12 +1,13 @@
 <div class="background-image"></div>
-<mat-drawer-container class="app-container-with-sidenav" autosize (window:resize)="shouldOpen()">
+<mat-drawer-container class="app-container-with-sidenav" autosize (window:resize)="mediaQueryFunc()">
   <mat-drawer #drawer class="sidenav" mode="side" [opened]="sideNavShouldOpen" >
     <app-side-nav></app-side-nav>
   </mat-drawer>
 
   <div id="main-header">
-    <button class="toggle-sidenav" type="button" (click)="drawer.toggle()">&#x2630;</button>
+    <button class="toggle-sidenav" type="button" (click)="drawer.toggle()" (click)="sizeClick()">&#x2630;</button>
   </div>
-
-  <router-outlet></router-outlet>
+  <div id="content" class="">
+    <router-outlet></router-outlet>
+  </div>
 </mat-drawer-container>

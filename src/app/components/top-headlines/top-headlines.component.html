@@ -2,13 +2,23 @@
     <h1>Top Headlines</h1>
     <div>
         <div class="chip-container">
-            <a class="chip" routerLink="/top-headlines/general" routerLinkActive="activeRoute">general</a>
-            <a class="chip" routerLink="/top-headlines/business" routerLinkActive="activeRoute">business</a>
-            <a class="chip" routerLink="/top-headlines/health" routerLinkActive="activeRoute">health</a>
-            <a class="chip" routerLink="/top-headlines/science" routerLinkActive="activeRoute">science</a>
-            <a class="chip" routerLink="/top-headlines/sports" routerLinkActive="activeRoute">sports</a>
-            <a class="chip" routerLink="/top-headlines/technology" routerLinkActive="activeRoute">technology</a>
-            <a class="chip" routerLink="/top-headlines/entertainment" routerLinkActive="activeRoute">entertainment</a>
+            <div class="set-1">
+                <a class="chip" routerLink="/top-headlines/general" routerLinkActive="activeRoute">general</a>
+                <a class="chip" routerLink="/top-headlines/business" routerLinkActive="activeRoute">business</a>
+                <a class="chip" routerLink="/top-headlines/health" routerLinkActive="activeRoute">health</a>
+            </div>
+            <div class="set-2">
+                <a class="chip" routerLink="/top-headlines/science" routerLinkActive="activeRoute">science</a>
+                <a class="chip" routerLink="/top-headlines/sports" routerLinkActive="activeRoute">sports</a>
+                <a class="chip" routerLink="/top-headlines/technology" routerLinkActive="activeRoute">technology</a>
+                <div class="set-3">
+                    <a class="chip" routerLink="/top-headlines/entertainment" routerLinkActive="activeRoute">entertainment</a>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
+<div class="articleBox">
+    <app-article-teaser *ngFor="let src of dumby.articles" [data]="src"></app-article-teaser>
 </div>

@@ -1,8 +1,9 @@
 @import '../../styles/base';
 
 .topHeadlineMenu {
-    color: white;
-    background-color: $primary-opacity;
+    color: $primary-opacity;
+    background-color: $secondary;
+    box-shadow: $primary-boxshadow;
     padding: 16px;
     margin: $primary-margin-header;
     border-radius: 10px;
@@ -16,17 +17,24 @@
             color: black;
             text-decoration: none;
             padding: 4px;
-            margin-right: 10px;
+            margin: 0px 10px 3px 0px;
 
-            background-color: #dbdbdb;
-            border: 1px solid black;
+            background-color: $secondary;
+            box-shadow: $primary-boxshadow;
             border-radius: 20px;
             transition: background-color 0.5s, box-shadow 0.2s;
         }
-        .chip:hover { background-color: white; box-shadow: 0px 0px 5px #999999;}
-        .activeRoute { font-weight: 500; background-color: white; }
+        .chip:hover { background-color: $primary; box-shadow: $primary-boxshadow; color: $secondary;}
+        .activeRoute { font-weight: 500; background-color: black; color: white; border-radius:10px; box-shadow: 0 0 12px $primary;}
+        .activeRoute:hover {background-color: $secondary; color: black; box-shadow: 0 0 10px $primary;}
     }
 }
+
+.articleBox {
+    height: calc(100vh - 161px);
+    overflow-y: scroll;
+}
+.set-1, .set-2, .set-3 { display: inline-block; width: auto; }
 
 
 
@@ -51,4 +59,13 @@
             }
         }
     }
+}
+
+@media screen and (max-width: 776px) {
+    .set-1 { display: block; width: 100%;}
+    .articleBox { height: calc(100vh - 192px); }
+}
+@media screen and (max-width: 596px) {
+    .set-3 { display: block; width: 100%;}
+    .articleBox { height: calc(100vh - 223px); }
 }

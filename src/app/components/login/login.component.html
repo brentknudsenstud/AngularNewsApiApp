@@ -1,7 +1,7 @@
 <div class="centerLogin">
 
     <div *ngIf="fb.isLoggedIn === false" class="signinContainer">
-        <span class="title">Cool News</span>
+        <span class="title"><div class="signInTitle">ION &nbsp;<i class="far fa-newspaper"></i></div><div class='subtitle'>Integrated Online News</div></span>
         <img class="googleLogo" src="../../../assets/google-logo.png" alt="Google logo">
         <span class="signinPrompt">Sign-in with Google</span>
         <button class="signinBtn" mat-raised-button color="primary" (click)="signIn()">Sign In</button>

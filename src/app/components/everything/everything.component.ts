@@ -11,6 +11,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EverythingComponent implements OnInit {
   apiPayload: any = "loading";
+  dumby = this.api.dumby;
+  
   select: string = '';
   input: string = '';
   constructor(

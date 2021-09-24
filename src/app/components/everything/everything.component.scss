@@ -1,7 +1,7 @@
 @import '../../styles/base';
 
 h1 {
-    color: $secondary;
+    color: $primary-opacity;
     font-size: 26px;
     position: relative;
 }
@@ -11,32 +11,35 @@ h1 {
 }
 
 .formfield select {
-    background-color: $primary-opacity;
-    color: $secondary;
+    background-color: $secondary;
+    color: $primary-opacity;
     border: none;
     cursor: pointer;
 }
 
 input {
     padding: 6px 20px;
-    background-color: $primary-opacity;
+    background-color: $secondary;
     border: none;
     font-size: 20px;
     cursor: pointer;
     width: 120px;
     box-shadow: $primary-box-shad;
+    border-radius: 5px;
     height: 30px;
     margin-right: 12px;
     margin-bottom: 12px;
-    color: $secondary;
+    color: $primary-opacity;
 }
 ::placeholder {
-    color: gray;
-    background-color: $primary-opacity;
+    color: rgb(122, 122, 122);
+    background-color: $secondary;
 }
 
 .box {
-    background-color: $everything-container-primary;
+    // background-color: $secondary;
+    border: $primary-border;
+    box-shadow: $primary-boxshadow;
     width: auto;
     border-radius: $primary-bord-rad;
     padding: 16px;
@@ -60,7 +63,8 @@ fieldset {
 
 input:focus {
     outline: none;
-    color: $secondary;
+    color: $primary;
+    background-color: $secondary;
 }
 
 select {
@@ -68,19 +72,21 @@ select {
     padding: 9px 10px 9px 20px;
     box-shadow: $primary-box-shad;
     margin-right: 12px;
+    border-radius: 5px;
 }
 
 option {
-    color: $secondary
+    color: $primary
 }
 
 .customize-button {
     border-radius: 50%;
     border-style: hidden;
     border-color: none;
+    margin: 10px 0;
     padding: 14px;
-    background-color: $primary-opacity;
-    color: $secondary;
+    background-color: $secondary;
+    color: $primary-opacity;
     box-shadow: $primary-box-shad;
     margin-left: 7px;
     cursor: pointer;
@@ -109,4 +115,27 @@ select:focus {
 
 ::ng-deep .mat-form-field-legacy {
     color: $primary;
+}
+
+.articleBox {
+    height: calc(100vh - 195px);
+    overflow-y: scroll;
+}
+
+
+.firstCollapse {
+    display: inline;
+}
+.secondCollapse {
+    display: inline;
+}
+
+@media screen and (max-width: 723px) {
+    .firstCollapse { display: block; }
+    .articleBox { height: calc(100vh - 249px); }
+}
+
+@media screen and (max-width: 550px) {
+    .secondCollapse { display: block; }
+    .articleBox { height: calc(100vh - 291px); }
 }

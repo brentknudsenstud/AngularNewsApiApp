@@ -5,19 +5,31 @@ h1 {
     font-size: 26px;
     position: relative;
     margin: $primary-margin-header;
-    color: $secondary;
-    background-color: $primary-opacity;
+    color: $primary;
+    background-color: $secondary;
     border-radius: $primary-bord-rad;
     padding: 16px;
+    border: $primary-border;
+    box-shadow: $primary-boxshadow;
 }
 .likes-container {
     margin: $primary-margin-header;
     background-color: $secondary;
     border-radius: $primary-bord-rad;
+    padding: 16px;
+    border: $primary-border;
+    box-shadow: $primary-boxshadow;
 }
 
-mat-tab-group {
+/* This changes the padding of the container to keep it from butting up against the edge */
+.mat-tab-group {
     height: calc(100vh - 115px);
+    padding: 0 9px;
+    width: auto;
 }
 
-
+.articleBox {
+    height: calc(100vh - 220px);
+    overflow-y: scroll;
+    border: 2px solid orange;
+}
