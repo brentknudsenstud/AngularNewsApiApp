@@ -16,15 +16,15 @@ h1 {
     margin: $primary-margin-header;
     background-color: $secondary;
     border-radius: $primary-bord-rad;
-    padding: 16px;
+    padding: 8px;
     border: $primary-border;
     box-shadow: $primary-boxshadow;
 }
 
 /* This changes the padding of the container to keep it from butting up against the edge */
 .mat-tab-group {
-    height: calc(100vh - 115px);
-    padding: 0 9px;
+    height: calc(100vh - 145px);
+    padding: 0px;
     width: auto;
 }
 
