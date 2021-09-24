@@ -14,7 +14,6 @@
         align-items: center;
         width: 200px;
         height: 300px;
-
         border: 1px solid #80808075;
         border-radius: 15px;
         background-color: $secondary;
@@ -47,17 +46,56 @@
     }
 
     .signedInContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 200px;
-        height: 100px;
-
+        padding: 0 5px;
         border: 1px solid #80808075;
         border-radius: 15px;
         background-color: $secondary;
         box-shadow: 0px 0px 10px $primary-opacity;
         
         .loggedInMessage {
-            margin-top: 15px;
+            margin-top: 40px;
             text-align: center;
+            
+        }
+
+        .loggedInTitle {
+            // margin: 20px 0px 50px;
+            margin: 15px 0 45px 0;
+            font-weight: bolder;
+            font-size: 30px;
+            text-align: center;
+            padding-top: 12px;
+            color: $primary-opacity;
+            
+
+        }
+        .subtitle {
+            font-size: 12px;
+        }
+        .fa-newspaper {
+            color: $primary-opacity;
+        }
+        .notLoggedIcon {
+            font-size: 40px;
+            color:  #3c3e7ce5;
+            text-align: center;
+        }
+        .iconSubtitle {
+            font-size: 10px;
+            color: $primary-opacity;
+        }
+        
+        .ifExtraLongName {
+            width: 200px;
+            word-break: break-all;
+            white-space: normal;
+            margin-bottom: 12px;
+            color:  #3c3e7ce5;
+
         }
     }
 }
