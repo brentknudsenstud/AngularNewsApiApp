@@ -9,17 +9,19 @@
     </div>
 
     <div class="container1">
-        <img [src]="data.urlToImage" alt="hello">
+        <img [src]="data.urlToImage" alt="hello" onerror="if (this.src != 'error.jpg') this.src = '../../../assets/newsPaper.jpg';">
         <div class="text-container">
             <div class="title">{{data.title}}</div>
             <div class="author">{{data.author}}</div>
         </div>
     </div>
 
-    <button class="flipBtn" (click)="multiBtn($event)">more details...</button>
+    <button class="flipBtn" (click)="multiBtn($event)">flip details...</button>
 
     <div class="articleBtn">
-        <a [href]="data.url" target="_blank" class="toArticle">To Article&nbsp;<i class="fas fa-sign-in-alt icon-white"></i></a>
+        <a [href]="data.url" target="_blank" class="toArticle" style="text-decoration:none;">
+            To Article&nbsp;<i class="fas fa-sign-in-alt icon-white"></i>
+        </a>
         <span (click)="likeClicked()" class="likes"><i class="fas fa-heart icon-white"></i></span>
     </div>
 </div>
