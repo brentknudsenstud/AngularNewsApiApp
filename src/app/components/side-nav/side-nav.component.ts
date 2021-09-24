@@ -21,10 +21,16 @@ export class SideNavComponent implements OnInit {
       if (userState === null) {
         this.fb.user = null;
         this.fb.isLoggedIn = false;
+        console.log("not in")
       }
       else {
         this.fb.user = userState;
         this.fb.isLoggedIn = true;
+        console.log("already in");
+        if (this.fb.runOnceAtStart === true) {
+          console.log("HA!");
+          this.fb.runOnceAtStart = false;
+        }
       }
     });
   }

@@ -25,7 +25,11 @@ export class ArticleTeaserComponent implements OnInit {
     }
   }
 
-  likeClicked() {
+  addToLikes() {
+
+  }
+
+  removeFromLikes() {
 
   }
 
