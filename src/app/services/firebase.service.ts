@@ -9,9 +9,14 @@ import firebase from 'firebase/app';
   providedIn: 'root'
 })
 export class FirebaseService {
-  isLoggedIn: boolean = null;
-  signOutHappening = null;
   user:any;
+  isLoggedIn: boolean = null;
+  likes: any;
+  allLikes: any;
+
+  runOnceAtStart = true;
+  signOutHappening = null;
+  signInDone = null;
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -25,10 +30,12 @@ export class FirebaseService {
     this.afAuth.signInWithPopup(googleAuthProvider).then(() => {
       this.isLoggedIn = true;
       this.signOutHappening = false;
-      this.afAuth.authState.subscribe(data => {
+      this.signInDone = false;
 
-        if(this.signOutHappening === true) {} //circumvents authState.subscribe on signout;
+      this.afAuth.authState.subscribe(data => {
+        if(this.signOutHappening === true || this.signInDone === true) {} //circumvents authState.subscribe on signout;
         else {
+          this.signInDone = true;
           this.user = data;
           this.development(this.user.uid);
         }
@@ -43,13 +50,30 @@ export class FirebaseService {
       this.user = null;
       this.route.navigate(['/login']);
       this.signOutHappening = true;
+      console.log("sign OUT");
     });
   }
 
   development(id) {
-    console.log(id);
+    console.log('whoa')
     let ref = this.db.doc(`/users/${id}`);
     ref.set({}, { merge: true});
+    
+  }
+
+  addToLikes(article) {
+
+  }
+
+  removeFromLikes(article) {
+
+  }
+
+  updateAllLikesAdd(article) {
+
+  }
+
+  updateAllLikesRemove(article) {
     
   }
 

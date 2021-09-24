@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { NewsApiService } from './services/news-api.service';
 import { FormsModule } from '@angular/forms';
 import { ArticleTeaserComponent } from './components/article-teaser/article-teaser.component';
+import { FirebaseService } from './services/firebase.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { ArticleTeaserComponent } from './components/article-teaser/article-teas
     AngularFirestoreModule,
     FormsModule,
   ],
-  providers: [NewsApiService],
+  providers: [NewsApiService, FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
