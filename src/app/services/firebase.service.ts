@@ -35,4 +35,16 @@ export class FirebaseService {
     });
   }
 
+  localStorageInit() {
+    console.log("init");
+  }
+
+  localStorageLogin() {
+
+  }
+
+  localStorageLogout() {
+
+  }
+
 }
