@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router'
+import { take } from 'rxjs/operators';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 import firebase from 'firebase/app';
 
@@ -7,12 +9,19 @@ import firebase from 'firebase/app';
   providedIn: 'root'
 })
 export class FirebaseService {
-  isLoggedIn: boolean = null;
   user:any;
+  isLoggedIn: boolean = null;
+  likes: any;
+  allLikes: any;
+
+  runOnceAtStart = true;
+  signOutHappening = null;
+  signInDone = null;
 
   constructor(
-    public afAuth: AngularFireAuth,
-    public route: Router,
+    private afAuth: AngularFireAuth,
+    private route: Router,
+    private db: AngularFirestore,
   ) {}
 
 
@@ -20,8 +29,15 @@ export class FirebaseService {
     const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
     this.afAuth.signInWithPopup(googleAuthProvider).then(() => {
       this.isLoggedIn = true;
+      this.signOutHappening = false;
+      this.signInDone = false;
+
       this.afAuth.authState.subscribe(data => {
-        this.user = data;
+        if(this.signOutHappening === true || this.signInDone === true) {} //circumvents authState.subscribe on signout;
+        else {
+          this.signInDone = true;
+          this.user = data;
+        }
       });
     });
     
@@ -32,6 +48,8 @@ export class FirebaseService {
       this.isLoggedIn = false;
       this.user = null;
       this.route.navigate(['/login']);
+      this.signOutHappening = true;
+      console.log("sign OUT");
     });
   }
 
