@@ -50,12 +50,10 @@ export class ArticleTeaserComponent implements OnInit {
     let heartClass = event.target.className;
 
     if (heartClass.includes("icon-white")) {
-      console.log("white to pink");
       event.target.className = "fas fa-heart heart-pink"
       this.fb.addLike(data);
     }
     else {
-      console.log("pink to white")
       event.target.className = "fas fa-heart icon-white"
       this.fb.removeLike(data); 
     }

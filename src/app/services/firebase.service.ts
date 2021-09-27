@@ -77,7 +77,7 @@ export class FirebaseService {
       this.users[this.id] = [];
       this.user = this.users[this.id];
       localStorage.setItem("users", JSON.stringify(this.users));
-      localStorage.setItem("allLikes", JSON.stringify(this.api.testAllLikes));  //CHANGE TO "userLikes" WHEN UR DONE TESTING!!!!!!!!!!!!!!!!!!!!!!!
+      localStorage.setItem("allLikes", JSON.stringify(this.api.allLikes));  //CHANGE TO "userLikes" WHEN UR DONE TESTING!!!!!!!!!!!!!!!!!!!!!!!
       this.allLikes = this.api.allLikes;
     }
     else {
@@ -110,29 +110,68 @@ export class FirebaseService {
 
 
   addLike(article) {
-    console.log("add");
     this.users = JSON.parse(localStorage.getItem("users"));
     this.user = this.users[this.id];
 
+    //ADD-TO-USER-LIKES==============================================
     this.user.push(article);
     this.users[this.id] = this.user;
     localStorage.setItem("users", JSON.stringify(this.users));
+
+    //ADD-TO-ALL-LIKES===============================================
+    this.allLikes = JSON.parse(localStorage.getItem("allLikes"));
+    for (let a = 0; a < this.allLikes.length; a++) {
+      if(this.allLikes[a].article.title == article.title) {
+        this.allLikes[a].count++;
+        localStorage.setItem("allLikes", JSON.stringify(this.allLikes));
+        return;
+      }
+    }
+    this.allLikes.push({count: 1, article: article});
+    localStorage.setItem("allLikes", JSON.stringify(this.allLikes));
+    return;
   }
 
   removeLike(article) {
-    console.log("remove")
     this.users = JSON.parse(localStorage.getItem("users"));
     this.user = this.users[this.id]
+
+    //REMOVE-FROM-USER-LIKES========================================
     for (let a = 0; a < this.user.length; a++) {
       if (this.user[a].title == article.title) {
-        console.log("got it");
         this.user.splice(a, 1);
         this.users[this.id] = this.user;
         localStorage.setItem("users", JSON.stringify(this.users));
       }
     }
 
+    //REMOVE-FROM-ALL-LIKES
+    this.allLikes = JSON.parse(localStorage.getItem("allLikes"));
+    for (let a = 0; a < this.allLikes.length; a++) {
+      if(this.allLikes[a].article.title == article.title) {
+        console.log("we're in")
+        if (this.allLikes[a].count == 1) {
+          console.log("its 1 its gone");
+          this.allLikes.splice(a, 1);
+          localStorage.setItem("allLikes", JSON.stringify(this.allLikes));
+          return;
+        }
+        else {
+          console.log("take away 1");
+          this.allLikes[a].count--;
+          localStorage.setItem("allLikes", JSON.stringify(this.allLikes));
+          return;
+        }
+      }
+    }
+  }
 
+  validAllLikes(allLikes) {
+    let valid = [];
+    for (let l = 0; l < allLikes.length; l++) {
+      if (allLikes[l].count > 1) { valid.push(allLikes[l].article);}
+    }
+    return valid;
   }
 
 

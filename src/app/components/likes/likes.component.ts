@@ -10,7 +10,7 @@ import { NewsApiService } from 'src/app/services/news-api.service';
 export class LikesComponent implements OnInit {
   dumby = this.api.dumby;
   userData = null;
-  allLikes = this.api.testAllLikes;
+  allLikes = null;
   
   constructor(
     private api: NewsApiService,
@@ -19,6 +19,7 @@ export class LikesComponent implements OnInit {
 
   ngOnInit(): void {
     this.userData = JSON.parse(localStorage.getItem("users"))[this.fb.id];
+    this.allLikes = this.fb.validAllLikes(JSON.parse(localStorage.getItem("allLikes")));
   }
 
 }
