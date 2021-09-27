@@ -32,7 +32,9 @@
 
 .articleBox {
     height: calc(100vh - 161px);
+    overflow-x: hidden;
     overflow-y: scroll;
+    padding: 0px 24px 0px
 }
 .set-1, .set-2, .set-3 { display: inline-block; width: auto; }
 

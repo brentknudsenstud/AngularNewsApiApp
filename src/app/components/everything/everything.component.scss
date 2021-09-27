@@ -119,7 +119,9 @@ select:focus {
 
 .articleBox {
     height: calc(100vh - 195px);
+    overflow-x: hidden;
     overflow-y: scroll;
+    padding: 0px 24px 0px;
 }
 
 

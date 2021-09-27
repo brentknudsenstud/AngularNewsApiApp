@@ -27,8 +27,8 @@ export class SideNavComponent implements OnInit {
         this.fb.user = userState;
         this.fb.isLoggedIn = true;
         console.log("already in");
+        this.fb.localStorageStart(userState);
         if (this.fb.runOnceAtStart === true) {
-          console.log("HA!");
           this.fb.runOnceAtStart = false;
         }
       }

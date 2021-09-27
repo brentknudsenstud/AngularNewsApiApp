@@ -16,7 +16,7 @@ h1 {
     margin: $primary-margin-header;
     background-color: $secondary;
     border-radius: $primary-bord-rad;
-    padding: 8px;
+    padding: 0px;
     border: $primary-border;
     box-shadow: $primary-boxshadow;
 }
@@ -31,5 +31,5 @@ h1 {
 .articleBox {
     height: calc(100vh - 220px);
     overflow-y: scroll;
-    border: 2px solid orange;
+    margin: 0px;
 }

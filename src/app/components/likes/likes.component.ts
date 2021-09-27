@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from 'src/app/services/firebase.service';
 import { NewsApiService } from 'src/app/services/news-api.service';
 
 @Component({
@@ -8,12 +9,16 @@ import { NewsApiService } from 'src/app/services/news-api.service';
 })
 export class LikesComponent implements OnInit {
   dumby = this.api.dumby;
+  userData = null;
+  allLikes = this.api.testAllLikes;
   
   constructor(
     private api: NewsApiService,
+    private fb: FirebaseService,
   ) { }
 
   ngOnInit(): void {
+    this.userData = JSON.parse(localStorage.getItem("users"))[this.fb.id];
   }
 
 }

@@ -22,6 +22,11 @@
         <a [href]="data.url" target="_blank" class="toArticle" style="text-decoration:none;">
             To Article&nbsp;<i class="fas fa-sign-in-alt icon-white"></i>
         </a>
-        <span class="likes"><i class="fas fa-heart icon-white"></i></span>
+        <span *ngIf="allLikes == false">
+            <span class="likes"><i (click)="clickLike($event, data)" [class]="isAlreadyLiked(data)"></i></span>
+        </span>
+        <span *ngIf="allLikes == true">
+            <span class="likes"><i class="fas fa-heart icon-white"></i></span>
+        </span>
     </div>
 </div>
