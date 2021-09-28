@@ -11,7 +11,6 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 })
 export class TopHeadlinesComponent implements OnInit {
   apiPayload: any = "loading";
-  dumby = this.api.dumby;
   userData = null;
   allLikes = false;
 
@@ -28,11 +27,9 @@ export class TopHeadlinesComponent implements OnInit {
     this.route.url.subscribe( url => {
       const category = url[1].path;
       const link = this.api.topHeadlinesEndpoint(category);
-      // this.http.get(link).subscribe(data => {
-      //   this.apiPayload = data;
-      //   console.log(data);
-      // });
-      this.apiPayload = link;
+      this.http.get(link).subscribe(data => {
+        this.apiPayload = data;
+      });
     });
   }
 

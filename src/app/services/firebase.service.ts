@@ -145,15 +145,12 @@ export class FirebaseService {
     this.allLikes = JSON.parse(localStorage.getItem("allLikes"));
     for (let a = 0; a < this.allLikes.length; a++) {
       if(this.allLikes[a].article.title == article.title) {
-        console.log("we're in")
         if (this.allLikes[a].count == 1) {
-          console.log("its 1 its gone");
           this.allLikes.splice(a, 1);
           localStorage.setItem("allLikes", JSON.stringify(this.allLikes));
           return;
         }
         else {
-          console.log("take away 1");
           this.allLikes[a].count--;
           localStorage.setItem("allLikes", JSON.stringify(this.allLikes));
           return;
@@ -168,41 +165,6 @@ export class FirebaseService {
       if (allLikes[l].count > 1) { valid.push(allLikes[l].article);}
     }
     return valid;
-  }
-
-
-
-
-
-  localStorageLog(type) {
-    let look = JSON.parse(localStorage.getItem("users"));
-    switch(type) {
-      case "keys":
-        console.log("keys: ",Object.keys(look));
-        break;
-      case "users":
-        console.log("users: ",look);
-        break;
-      case "user":
-        console.log("user: ",look[this.id]);
-        break;
-      case "id":
-        console.log("id: ", this.id);
-        break;
-      case "compare":
-        console.log(`C! fresh get:\n${this.id}\n${look[this.id]}\n${look}\n---------`);
-        console.log(`C! fb Data:\n${this.id}\n${this.user}\n${this.users}`);
-        break;
-      case "report":
-        console.log(`report:\nid: ${this.id}\nuser: ${this.user}\nusers: ${this.users}\n---------`);
-        break;
-      case "allLikes":
-        console.log("all likes: ",this.allLikes);
-        break;
-      default:
-        console.log(`report:\nid: ${this.id}\nuser: ${this.user}\nusers: ${this.users}\n---------`);
-        break;
-    }
   }
 
 }

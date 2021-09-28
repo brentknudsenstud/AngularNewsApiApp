@@ -21,101 +21,16 @@ export class NewsApiService {
       return link;
     }
     else if (this.categories.includes(category)) {
-      let link = `https://newsapi.org/v2/top-headlines?category=${category}&q=${query}&apiKey=${this.apiKey}`;
+      let link = `https://newsapi.org/v2/top-headlines?category=${category}&country=us&q=${query}&apiKey=${this.apiKey}`;
       return link;
     }
     else {
-      let link = `https://newsapi.org/v2/everything?q=${query}&apiKey=${this.apiKey}`;
+      let link = `https://newsapi.org/v2/everything?q=${query}&language=en&apiKey=${this.apiKey}`;
       return link;
     }
   }
 
-  testAllLikes = [
-    {count: 1, article:{
-        "source": {
-            "id": "usa-today",
-            "name": "USA Today"
-        },
-        "author": "Jeanine Santucci, USA TODAY",
-        "title": "Masks help keep students safe from COVID, studies say; vaccine mandate for NYC teachers temporarily blocked. Latest COVID-19 updates - USA TODAY",
-        "description": "NYC schools temporarily blocked from enforcing teacher vaccine mandate. COVID outbreaks more common when schools didn't mandate masks, studies say.",
-        "url": "https://www.usatoday.com/story/news/health/2021/09/25/masks-help-prevent-students-catching-covid-19-live-updates/5848277001/",
-        "urlToImage": "https://www.gannett-cdn.com/presto/2021/09/20/USAT/f9557c8d-5350-4b69-8e49-0a5ce95a6c0d-USATSI_16770148.jpg?auto=webp&crop=5886,3311,x0,y358&format=pjpg&width=1200",
-        "publishedAt": "2021-09-25T16:18:45Z",
-        "content": "CDC Director Rochelle Walensky has rejected a recommendation of a CDC advisory panel and instead expanded the list of people eligible for a COVID-19 booster shot to include those who are at greater r… [+7161 chars]"
-    }},
-    {count: 2, article:{
-        "source": {
-            "id": "fox-news",
-            "name": "Fox News"
-        },
-        "author": "Melissa Roberto",
-        "title": "TOXIC: Britney Spears' former security staffer claims star's bedroom was bugged - Fox News",
-        "description": "A former member of Britney Spears' longtime security team claims the pop star's bedroom was bugged with an audio recording device that monitored her personal conversations at home.",
-        "url": "https://www.foxnews.com/entertainment/britney-spears-former-security-staffer-claims-bedroom-bugged-audio-recording-device",
-        "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2021/09/spears-omg-.jpg",
-        "publishedAt": "2021-09-25T15:55:06Z",
-        "content": "A former member of Britney Spears' longtime security team claims the pop star's bedroom was bugged with an audio recording device that monitored her personal conversations at home.\r\nThe \"New York Tim… [+5855 chars]"
-    }},
-    {count: 3, article:{
-        "source": {
-            "id": null,
-            "name": "ESPN"
-        },
-        "author": "Brooke Pryor",
-        "title": "Pittsburgh Steelers' T.J. Watt downgraded to out because of groin injury - ESPN",
-        "description": "T.J. Watt had expressed hope that he could \"leave the door open\" to play despite a groin injury, but the Steelers have ruled the linebacker out for Sunday's game against the Bengals.",
-        "url": "https://www.espn.com/nfl/story/_/id/32275976/pittsburgh-steelers-tj-watt-downgraded-due-groin-injury",
-        "urlToImage": "https://a4.espncdn.com/combiner/i?img=%2Fphoto%2F2021%2F0107%2Fr799059_1296x729_16%2D9.jpg",
-        "publishedAt": "2021-09-25T15:33:26Z",
-        "content": "PITTSBURGH -- Pittsburgh Steelers outside linebacker T.J. Watt has been downgraded to out for Sunday's game against the Cincinnati Bengals, the team announced Saturday.\r\nWatt injured his groin in the… [+1520 chars]"
-    }}
-  ];
-
-  userLikes = [
-    {
-        "source": {
-            "id": "usa-today",
-            "name": "USA Today"
-        },
-        "author": "Jeanine Santucci, USA TODAY",
-        "title": "Masks help keep students safe from COVID, studies say; vaccine mandate for NYC teachers temporarily blocked. Latest COVID-19 updates - USA TODAY",
-        "description": "NYC schools temporarily blocked from enforcing teacher vaccine mandate. COVID outbreaks more common when schools didn't mandate masks, studies say.",
-        "url": "https://www.usatoday.com/story/news/health/2021/09/25/masks-help-prevent-students-catching-covid-19-live-updates/5848277001/",
-        "urlToImage": "https://www.gannett-cdn.com/presto/2021/09/20/USAT/f9557c8d-5350-4b69-8e49-0a5ce95a6c0d-USATSI_16770148.jpg?auto=webp&crop=5886,3311,x0,y358&format=pjpg&width=1200",
-        "publishedAt": "2021-09-25T16:18:45Z",
-        "content": "CDC Director Rochelle Walensky has rejected a recommendation of a CDC advisory panel and instead expanded the list of people eligible for a COVID-19 booster shot to include those who are at greater r… [+7161 chars]"
-    },
-    {
-        "source": {
-            "id": "fox-news",
-            "name": "Fox News"
-        },
-        "author": "Melissa Roberto",
-        "title": "TOXIC: Britney Spears' former security staffer claims star's bedroom was bugged - Fox News",
-        "description": "A former member of Britney Spears' longtime security team claims the pop star's bedroom was bugged with an audio recording device that monitored her personal conversations at home.",
-        "url": "https://www.foxnews.com/entertainment/britney-spears-former-security-staffer-claims-bedroom-bugged-audio-recording-device",
-        "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2021/09/spears-omg-.jpg",
-        "publishedAt": "2021-09-25T15:55:06Z",
-        "content": "A former member of Britney Spears' longtime security team claims the pop star's bedroom was bugged with an audio recording device that monitored her personal conversations at home.\r\nThe \"New York Tim… [+5855 chars]"
-    },
-    {
-        "source": {
-            "id": null,
-            "name": "ESPN"
-        },
-        "author": "Brooke Pryor",
-        "title": "Pittsburgh Steelers' T.J. Watt downgraded to out because of groin injury - ESPN",
-        "description": "T.J. Watt had expressed hope that he could \"leave the door open\" to play despite a groin injury, but the Steelers have ruled the linebacker out for Sunday's game against the Bengals.",
-        "url": "https://www.espn.com/nfl/story/_/id/32275976/pittsburgh-steelers-tj-watt-downgraded-due-groin-injury",
-        "urlToImage": "https://a4.espncdn.com/combiner/i?img=%2Fphoto%2F2021%2F0107%2Fr799059_1296x729_16%2D9.jpg",
-        "publishedAt": "2021-09-25T15:33:26Z",
-        "content": "PITTSBURGH -- Pittsburgh Steelers outside linebacker T.J. Watt has been downgraded to out for Sunday's game against the Cincinnati Bengals, the team announced Saturday.\r\nWatt injured his groin in the… [+1520 chars]"
-    }
-  ];
-
-
-
+  
   dumby = {
     "status": "ok",
     "totalResults": 38,

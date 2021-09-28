@@ -12,7 +12,6 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 })
 export class EverythingComponent implements OnInit {
   apiPayload: any = "loading";
-  dumby = this.api.dumby;
   userData;
   allLikes = false;
   
@@ -34,10 +33,9 @@ export class EverythingComponent implements OnInit {
       const category = url[2].path;
       this.select = url[2].path;
       const link = this.api.everythingEndpoint(query, category);
-      // this.http.get(link).subscribe(data => {
-      //   this.apiPayload = data;
-      // });
-      this.apiPayload = link;
+      this.http.get(link).subscribe(data => {
+        this.apiPayload = data;
+      });
     });
   }
   buildLink() {
