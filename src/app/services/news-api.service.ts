@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class NewsApiService {
   apiKey: string = "75e20b21ea8f499190960a2dfbc5f410";
   categories = ['business','entertainment','general','health','science','sports','technology'];
+  sideNavShouldOpen = null;
 
   constructor() { }
 

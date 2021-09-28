@@ -1,6 +1,6 @@
 <div class="background-image"></div>
 <mat-drawer-container class="app-container-with-sidenav" autosize (window:resize)="mediaQueryFunc()">
-  <mat-drawer #drawer class="sidenav" mode="side" [opened]="sideNavShouldOpen" >
+  <mat-drawer id="sidenav" #drawer class="sidenav" mode="side" [opened]="data.sideNavShouldOpen" >
     <app-side-nav></app-side-nav>
   </mat-drawer>
 

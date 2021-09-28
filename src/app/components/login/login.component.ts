@@ -22,9 +22,4 @@ export class LoginComponent implements OnInit {
     this.fb.signIn();
   }
 
-  // test() {
-  //   this.afAuth.authState.subscribe(c => console.log(c));
-  //   console.log(this.fb.user);
-  //   console.log("Logged:",this.fb.isLoggedIn);
-  // }
 }

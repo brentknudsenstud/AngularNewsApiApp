@@ -58,7 +58,6 @@ export class FirebaseService {
       this.localStorageEnd();
       this.route.navigate(['/login']);
       this.signOutHappening = true;
-      console.log("sign OUT");
     });
   }
 
@@ -72,7 +71,6 @@ export class FirebaseService {
 
     //RUNS-ON-FIRST-INITIALIZATION======================================================
     if (isSet ===  null) {
-      console.log("first time");
       this.users = {};
       this.users[this.id] = [];
       this.user = this.users[this.id];
@@ -83,7 +81,6 @@ export class FirebaseService {
     else {
       //RUNS-WHEN-USER-IS-NEW===========================================================
       if ((JSON.parse(isSet)).hasOwnProperty(this.id) === false) {
-        console.log("new user");
         this.users = JSON.parse(isSet);
         this.users[this.id] = [];
         this.user = this.users[this.id];
@@ -91,7 +88,6 @@ export class FirebaseService {
       }
       //RUNS-WHEN-USER-HAS-EXISTED-PRIOR=================================================
       else {
-        console.log("existing user");
         this.users = JSON.parse(isSet);
         this.user = this.users[this.id];
       }
