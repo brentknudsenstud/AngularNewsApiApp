@@ -1,7 +1,7 @@
 @import '../../styles/base';
 
 .articleContainer {
-    margin: $primary-margin-header;
+    margin: 0px 0px 12px 0px; //$primary-margin-header 24 12
     position: relative;
     border: 1px solid $primary-opacity;
     border-radius: 5px;
@@ -15,22 +15,27 @@
         position: absolute;
     
         img {
-            height: 150px;
             width: 100px;
             object-fit: cover;
         }
         .title {
-            max-height: 100px;
+            max-height: 80px;
             padding: 0px;
             font-size: 15px;
             overflow: scroll;
+            overflow-x: hidden;
             font-weight: bold;
+            word-wrap: break-word;
         }
         .author {
             font-size: 12px;
             font-style: italic;
             position: relative;
-            bottom: 20px;
+            bottom: 0px;
+            height: 25px;
+            word-wrap: break-word;
+            overflow: scroll;
+            overflow-x: hidden;
         }
         .text-container {
             margin: 8px;
@@ -145,6 +150,14 @@
                     overflow-y: scroll;
                 }
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 335px) {
+    .articleContainer{
+        .flipBtn {
+            right: 0px;
         }
     }
 }

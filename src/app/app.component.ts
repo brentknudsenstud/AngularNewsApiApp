@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NewsApiService } from './services/news-api.service';
 
 @Component({
   selector: 'app-root',
@@ -11,43 +12,38 @@ export class AppComponent {
   sideHideWidth:number = 496;
   lastWidth:number;
 
-  constructor() {}
+  constructor(
+    public data: NewsApiService,
+  ) {}
 
   ngOnInit() {
     if (window.innerWidth > 650) { 
-      this.sideNavShouldOpen = true;
+      this.data.sideNavShouldOpen = true;
     }
     else { 
-      this.sideNavShouldOpen = false; 
+      this.data.sideNavShouldOpen = false; 
     }
   }
 
   sizeClick() {
-    if(this.sideNavShouldOpen === true) { this.sideNavShouldOpen = false; }
-    else if(this.sideNavShouldOpen === false) { this.sideNavShouldOpen = true; }
+    if(this.data.sideNavShouldOpen === true) { this.data.sideNavShouldOpen = false; }
+    else if(this.data.sideNavShouldOpen === false) { this.data.sideNavShouldOpen = true; }
 
-    if (window.innerWidth < this.sideHideWidth && this.sideNavShouldOpen == true) {
+    if (window.innerWidth < this.sideHideWidth && this.data.sideNavShouldOpen == true) {
       document.getElementById('content').className = 'noDisplay';
     }
     else {
       document.getElementById('content').className = '';
     }
   }
-
-
-  test() {
-    if(this.sideNavShouldOpen === true) { console.log("open: ", this.sideNavShouldOpen)}
-    if(this.sideNavShouldOpen === false) { console.log("close: ", this.sideNavShouldOpen)}
-  }
-
   
   mediaQueryFunc() {
     //SHOULD-SIDENAV-BE-OPEN-BY-DEFAULT=====================================================
-    if (window.innerWidth > this.sideRespWidth && this.sideNavShouldOpen != true) {
-      this.sideNavShouldOpen = true;
+    if (window.innerWidth > this.sideRespWidth && this.data.sideNavShouldOpen != true) {
+      this.data.sideNavShouldOpen = true;
     }
-    else if (window.innerWidth < this.sideRespWidth && this.sideNavShouldOpen != false) {
-      this.sideNavShouldOpen = false;
+    else if (window.innerWidth < this.sideRespWidth && this.data.sideNavShouldOpen != false) {
+      this.data.sideNavShouldOpen = false;
     }
 
     //HIDE-CONTENT-WHEN-SIDENAV-OPENS-TO-CERTAIN-WIDTH======================================
