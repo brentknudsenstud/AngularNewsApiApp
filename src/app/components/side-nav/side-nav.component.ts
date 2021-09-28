@@ -8,7 +8,7 @@ import { FirebaseService } from 'src/app/services/firebase.service';
   styleUrls: ['./side-nav.component.scss']
 })
 export class SideNavComponent implements OnInit {
-  topHeadlineCategories: string[] = ['business','entertainment','general','health','science','sports','technology'];
+  topHeadlineCategories: string[] = ['general', 'business', 'health', 'science', 'sports', 'technology', 'entertainment'];
   dropdownStyle: string = "navItem dropdown"
 
   constructor(
